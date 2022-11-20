@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="hu">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Weather app</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap"
+            rel="stylesheet"
+        />
+        <script defer src="app.js"></script>
+    </head>
+
+    <body>
+        <main>
+            <section class="flex-between clouds">
+                <svg
+                    class="cloud-float left-cloud"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="600"
+                    height="600"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        fill="#bbe5ea"
+                        d="m19.21 12.04l-1.53-.11l-.3-1.5A5.484 5.484 0 0 0 12 6C9.94 6 8.08 7.14 7.12 8.96l-.5.95l-1.07.11A3.99 3.99 0 0 0 2 14c0 2.21 1.79 4 4 4h13c1.65 0 3-1.35 3-3c0-1.55-1.22-2.86-2.79-2.96z"
+                        opacity=".3"
+                    />
+                    <path
+                        fill="#bbe5ea"
+                        d="M19.35 10.04A7.49 7.49 0 0 0 12 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 0 0 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5c0-2.64-2.05-4.78-4.65-4.96zM19 18H6c-2.21 0-4-1.79-4-4c0-2.05 1.53-3.76 3.56-3.97l1.07-.11l.5-.95A5.469 5.469 0 0 1 12 6c2.62 0 4.88 1.86 5.39 4.43l.3 1.5l1.53.11A2.98 2.98 0 0 1 22 15c0 1.65-1.35 3-3 3z"
+                    />
+                </svg>
+                <svg
+                    class="cloud-float center-cloud"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="600"
+                    height="600"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        fill="#bbe5ea"
+                        d="m19.21 12.04l-1.53-.11l-.3-1.5A5.484 5.484 0 0 0 12 6C9.94 6 8.08 7.14 7.12 8.96l-.5.95l-1.07.11A3.99 3.99 0 0 0 2 14c0 2.21 1.79 4 4 4h13c1.65 0 3-1.35 3-3c0-1.55-1.22-2.86-2.79-2.96z"
+                        opacity=".3"
+                    />
+                    <path
+                        fill="#bbe5ea"
+                        d="M19.35 10.04A7.49 7.49 0 0 0 12 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 0 0 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5c0-2.64-2.05-4.78-4.65-4.96zM19 18H6c-2.21 0-4-1.79-4-4c0-2.05 1.53-3.76 3.56-3.97l1.07-.11l.5-.95A5.469 5.469 0 0 1 12 6c2.62 0 4.88 1.86 5.39 4.43l.3 1.5l1.53.11A2.98 2.98 0 0 1 22 15c0 1.65-1.35 3-3 3z"
+                    />
+                </svg>
+                <svg
+                    class="cloud-float right-cloud"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="600"
+                    height="600"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        fill="#bbe5ea"
+                        d="m19.21 12.04l-1.53-.11l-.3-1.5A5.484 5.484 0 0 0 12 6C9.94 6 8.08 7.14 7.12 8.96l-.5.95l-1.07.11A3.99 3.99 0 0 0 2 14c0 2.21 1.79 4 4 4h13c1.65 0 3-1.35 3-3c0-1.55-1.22-2.86-2.79-2.96z"
+                        opacity=".3"
+                    />
+                    <path
+                        fill="#bbe5ea"
+                        d="M19.35 10.04A7.49 7.49 0 0 0 12 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 0 0 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5c0-2.64-2.05-4.78-4.65-4.96zM19 18H6c-2.21 0-4-1.79-4-4c0-2.05 1.53-3.76 3.56-3.97l1.07-.11l.5-.95A5.469 5.469 0 0 1 12 6c2.62 0 4.88 1.86 5.39 4.43l.3 1.5l1.53.11A2.98 2.98 0 0 1 22 15c0 1.65-1.35 3-3 3z"
+                    />
+                </svg>
+            </section>
+
+            <section class="container">
+                <div class="current-info">
+                    <div class="date-container w-3">
+                        <div class="time" id="time">
+                            12:30 <span id="am-pm">PM</span>
+                        </div>
+                        <div class="date" id="date">Monday, 24 May</div>
+                        <div
+                            class="data black-overlay"
+                            id="currentWeatheritems"
+                        >
+                            <div class="flex-between" style="flex-wrap: wrap">
+                                <div class="px-1">
+                                    <strong>Szél.fok:(lat):</strong>
+                                    <span class="px-1" id="coordLat"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+                                    >
+                                </div>
+                                <div class="px-1">
+                                    <strong>Hossz.fok:(lon):</strong>
+                                    <span class="px-1" id="coordLon"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+                                    >
+                                </div>
+                            </div>
+                            <div class="px-1">
+                                <strong>Aktuális hőmérséklet:</strong>
+                                <span class="px-1" id="temperature"
+                                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+                                >
+                                <span>°C</span>
+                            </div>
+                            <div class="px-1">
+                                <strong>Nyomásérték:</strong>
+                                <span class="px-1" id="pressure"
+                                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+                                >
+                                <span>hPa</span>
+                            </div>
+                            <div class="px-1">
+                                <strong>Páratartalom:</strong>
+                                <span class="px-1" id="humidity"
+                                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+                                >
+                                <span>%</span>
+                            </div>
+                            <div class="px-1">
+                                <strong>Szélirány és erősség:</strong>
+                                <span class="px-1" id="windLine"
+                                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+                                >
+                                <span>m/s ENE</span>
+                            </div>
+                            <div class="px-1">
+                                <strong>Csapadék információk:</strong>
+                                <span class="px-1" id="rainfallAmount"
+                                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+                                >
+                            </div>
+                            <div class="px-1">
+                                <strong>Felhőzet:</strong>
+                                <span class="px-1" id="cloudInfo"
+                                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+                                >,
+                                <span class="px-1" id="cloudCover"
+                                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-place black-overlay w-3">
+                        <form class="">
+                            <label class="base-label" for="cityName"
+                                >Válaszd ki a város nevét</label
+                            >
+                            <br />
+                            <select
+                                class="base-select"
+                                name="city"
+                                id="cityName"
+                            >
+                                <option value="3054643">Budapest</option>
+                                <option value="3052009">Győr</option>
+                                <option value="721472">Debrecen</option>
+                                <option value="717582">Miskolc</option>
+                                <option value="3046526">Pécs</option>
+                                <option value="3045190">Sopron</option>
+                                <option value="715429">Szeged</option>
+                                <option value="3197728">Gyékényes</option>
+                            </select>
+                            <div
+                                class="primary-btn"
+                                onclick="getOpenWeatherData(3054643)"
+                            >
+                                Időjárás megjelenítése
+                            </div>
+                        </form>
+                        <div id="weather">
+                            <div id="description"></div>
+                            <h1 id="temp"></h1>
+                            <div id="location"></div>
+                        </div>
+                    </div>
+                    <div class="place-container black-overlay w-3">
+                        <div class="time-zone" id="timeZone">Város neve</div>
+                        <div class="px-1">
+                            <strong>Lekérdezés dátuma:</strong>
+                            <u
+                                ><span class="px-1" id="queryDate"
+                                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+                                ></u
+                            >
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer id="futureForecast" class="future-forecast hidden">
+                <div class="today" id="current-temp">
+                    <svg width="50px" height="50px" viewBox="0 0 148 148">
+                        <path
+                            d="M65.03 60.514c.642 0 1.27.057 1.889.143a15.476 15.476 0 01-.344-3.23c0-8.524 6.91-15.437 15.435-15.437 8.294 0 15.042 6.547 15.402 14.752a9.224 9.224 0 016.208-2.404 9.263 9.263 0 019.263 9.263 9.165 9.165 0 01-.619 3.305c.7-.14 1.423-.218 2.161-.218 5.97 0 10.806 4.839 10.806 10.805 0 5.97-4.836 10.806-10.806 10.806H65.031c-7.674 0-13.893-6.219-13.893-13.893 0-7.671 6.219-13.892 13.893-13.892"
+                            fill="#3b3c40"
+                        ></path>
+                        <path
+                            d="M39.25 73.05c.76 0 1.505.07 2.24.17a18.296 18.296 0 01-.41-3.834c0-10.114 8.2-18.31 18.312-18.31 9.84 0 17.843 7.766 18.27 17.5a10.935 10.935 0 017.366-2.853c6.068 0 10.987 4.922 10.987 10.99 0 1.382-.267 2.7-.732 3.918a12.868 12.868 0 012.564-.256c7.078 0 12.818 5.739 12.818 12.818 0 7.078-5.74 12.817-12.818 12.817H39.25c-9.103 0-16.48-7.378-16.48-16.48 0-9.103 7.377-16.48 16.48-16.48"
+                            fill="#efefed"
+                        ></path>
+                    </svg>
+                    <div class="other">
+                        <div id="currentDay" class="day"></div>
+                        <div class="temp">
+                            Éjjel:
+                            <span id="currentMinTemp" class="px-1"></span> -
+                            <span>°C</span>
+                        </div>
+                        <div class="temp">
+                            Nappal:
+                            <span id="currentMaxTemp" class="px-1"></span> -
+                            <span>°C</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weather-forecast" id="weatherForecast">
+                    <div class="weather-forecast-item">
+                        <div class="day"></div>
+                        <svg width="50px" height="50px" viewBox="0 0 148 148">
+                            <path
+                                d="M65.03 60.514c.642 0 1.27.057 1.889.143a15.476 15.476 0 01-.344-3.23c0-8.524 6.91-15.437 15.435-15.437 8.294 0 15.042 6.547 15.402 14.752a9.224 9.224 0 016.208-2.404 9.263 9.263 0 019.263 9.263 9.165 9.165 0 01-.619 3.305c.7-.14 1.423-.218 2.161-.218 5.97 0 10.806 4.839 10.806 10.805 0 5.97-4.836 10.806-10.806 10.806H65.031c-7.674 0-13.893-6.219-13.893-13.893 0-7.671 6.219-13.892 13.893-13.892"
+                                fill="#3b3c40"
+                            ></path>
+                            <path
+                                d="M39.25 73.05c.76 0 1.505.07 2.24.17a18.296 18.296 0 01-.41-3.834c0-10.114 8.2-18.31 18.312-18.31 9.84 0 17.843 7.766 18.27 17.5a10.935 10.935 0 017.366-2.853c6.068 0 10.987 4.922 10.987 10.99 0 1.382-.267 2.7-.732 3.918a12.868 12.868 0 012.564-.256c7.078 0 12.818 5.739 12.818 12.818 0 7.078-5.74 12.817-12.818 12.817H39.25c-9.103 0-16.48-7.378-16.48-16.48 0-9.103 7.377-16.48 16.48-16.48"
+                                fill="#efefed"
+                            ></path>
+                        </svg>
+                        <div class="temp">
+                            Éjjel: <span class="min-temp" class="px-1"></span> -
+                            <span>°C</span>
+                        </div>
+                        <div class="temp">
+                            Nappal:
+                            <span class="max-temp" class="px-1"></span> -
+                            <span>°C</span>
+                        </div>
+                    </div>
+                    <div class="weather-forecast-item">
+                        <div class="day"></div>
+                        <svg width="50px" height="50px" viewBox="0 0 148 148">
+                            <path
+                                d="M65.03 60.514c.642 0 1.27.057 1.889.143a15.476 15.476 0 01-.344-3.23c0-8.524 6.91-15.437 15.435-15.437 8.294 0 15.042 6.547 15.402 14.752a9.224 9.224 0 016.208-2.404 9.263 9.263 0 019.263 9.263 9.165 9.165 0 01-.619 3.305c.7-.14 1.423-.218 2.161-.218 5.97 0 10.806 4.839 10.806 10.805 0 5.97-4.836 10.806-10.806 10.806H65.031c-7.674 0-13.893-6.219-13.893-13.893 0-7.671 6.219-13.892 13.893-13.892"
+                                fill="#3b3c40"
+                            ></path>
+                            <path
+                                d="M39.25 73.05c.76 0 1.505.07 2.24.17a18.296 18.296 0 01-.41-3.834c0-10.114 8.2-18.31 18.312-18.31 9.84 0 17.843 7.766 18.27 17.5a10.935 10.935 0 017.366-2.853c6.068 0 10.987 4.922 10.987 10.99 0 1.382-.267 2.7-.732 3.918a12.868 12.868 0 012.564-.256c7.078 0 12.818 5.739 12.818 12.818 0 7.078-5.74 12.817-12.818 12.817H39.25c-9.103 0-16.48-7.378-16.48-16.48 0-9.103 7.377-16.48 16.48-16.48"
+                                fill="#efefed"
+                            ></path>
+                        </svg>
+                        <div class="temp">
+                            Éjjel: <span class="min-temp" class="px-1"></span> -
+                            <span>°C</span>
+                        </div>
+                        <div class="temp">
+                            Nappal:
+                            <span class="max-temp" class="px-1"></span> -
+                            <span>°C</span>
+                        </div>
+                    </div>
+                    <div class="weather-forecast-item">
+                        <div class="day"></div>
+                        <svg width="50px" height="50px" viewBox="0 0 148 148">
+                            <path
+                                d="M65.03 60.514c.642 0 1.27.057 1.889.143a15.476 15.476 0 01-.344-3.23c0-8.524 6.91-15.437 15.435-15.437 8.294 0 15.042 6.547 15.402 14.752a9.224 9.224 0 016.208-2.404 9.263 9.263 0 019.263 9.263 9.165 9.165 0 01-.619 3.305c.7-.14 1.423-.218 2.161-.218 5.97 0 10.806 4.839 10.806 10.805 0 5.97-4.836 10.806-10.806 10.806H65.031c-7.674 0-13.893-6.219-13.893-13.893 0-7.671 6.219-13.892 13.893-13.892"
+                                fill="#3b3c40"
+                            ></path>
+                            <path
+                                d="M39.25 73.05c.76 0 1.505.07 2.24.17a18.296 18.296 0 01-.41-3.834c0-10.114 8.2-18.31 18.312-18.31 9.84 0 17.843 7.766 18.27 17.5a10.935 10.935 0 017.366-2.853c6.068 0 10.987 4.922 10.987 10.99 0 1.382-.267 2.7-.732 3.918a12.868 12.868 0 012.564-.256c7.078 0 12.818 5.739 12.818 12.818 0 7.078-5.74 12.817-12.818 12.817H39.25c-9.103 0-16.48-7.378-16.48-16.48 0-9.103 7.377-16.48 16.48-16.48"
+                                fill="#efefed"
+                            ></path>
+                        </svg>
+                        <div class="temp">
+                            Éjjel: <span class="min-temp" class="px-1"></span> -
+                            <span>°C</span>
+                        </div>
+                        <div class="temp">
+                            Nappal:
+                            <span class="max-temp" class="px-1"></span> -
+                            <span>°C</span>
+                        </div>
+                    </div>
+                    <div class="weather-forecast-item">
+                        <div class="day"></div>
+                        <svg width="50px" height="50px" viewBox="0 0 148 148">
+                            <path
+                                d="M65.03 60.514c.642 0 1.27.057 1.889.143a15.476 15.476 0 01-.344-3.23c0-8.524 6.91-15.437 15.435-15.437 8.294 0 15.042 6.547 15.402 14.752a9.224 9.224 0 016.208-2.404 9.263 9.263 0 019.263 9.263 9.165 9.165 0 01-.619 3.305c.7-.14 1.423-.218 2.161-.218 5.97 0 10.806 4.839 10.806 10.805 0 5.97-4.836 10.806-10.806 10.806H65.031c-7.674 0-13.893-6.219-13.893-13.893 0-7.671 6.219-13.892 13.893-13.892"
+                                fill="#3b3c40"
+                            ></path>
+                            <path
+                                d="M39.25 73.05c.76 0 1.505.07 2.24.17a18.296 18.296 0 01-.41-3.834c0-10.114 8.2-18.31 18.312-18.31 9.84 0 17.843 7.766 18.27 17.5a10.935 10.935 0 017.366-2.853c6.068 0 10.987 4.922 10.987 10.99 0 1.382-.267 2.7-.732 3.918a12.868 12.868 0 012.564-.256c7.078 0 12.818 5.739 12.818 12.818 0 7.078-5.74 12.817-12.818 12.817H39.25c-9.103 0-16.48-7.378-16.48-16.48 0-9.103 7.377-16.48 16.48-16.48"
+                                fill="#efefed"
+                            ></path>
+                        </svg>
+                        <div class="temp">
+                            Éjjel: <span class="min-temp" class="px-1"></span> -
+                            <span>°C</span>
+                        </div>
+                        <div class="temp">
+                            Nappal:
+                            <span class="max-temp" class="px-1"></span> -
+                            <span>°C</span>
+                        </div>
+                    </div>
+                    <div class="weather-forecast-item">
+                        <div class="day"></div>
+                        <svg width="50px" height="50px" viewBox="0 0 148 148">
+                            <path
+                                d="M65.03 60.514c.642 0 1.27.057 1.889.143a15.476 15.476 0 01-.344-3.23c0-8.524 6.91-15.437 15.435-15.437 8.294 0 15.042 6.547 15.402 14.752a9.224 9.224 0 016.208-2.404 9.263 9.263 0 019.263 9.263 9.165 9.165 0 01-.619 3.305c.7-.14 1.423-.218 2.161-.218 5.97 0 10.806 4.839 10.806 10.805 0 5.97-4.836 10.806-10.806 10.806H65.031c-7.674 0-13.893-6.219-13.893-13.893 0-7.671 6.219-13.892 13.893-13.892"
+                                fill="#3b3c40"
+                            ></path>
+                            <path
+                                d="M39.25 73.05c.76 0 1.505.07 2.24.17a18.296 18.296 0 01-.41-3.834c0-10.114 8.2-18.31 18.312-18.31 9.84 0 17.843 7.766 18.27 17.5a10.935 10.935 0 017.366-2.853c6.068 0 10.987 4.922 10.987 10.99 0 1.382-.267 2.7-.732 3.918a12.868 12.868 0 012.564-.256c7.078 0 12.818 5.739 12.818 12.818 0 7.078-5.74 12.817-12.818 12.817H39.25c-9.103 0-16.48-7.378-16.48-16.48 0-9.103 7.377-16.48 16.48-16.48"
+                                fill="#efefed"
+                            ></path>
+                        </svg>
+                        <div class="temp">
+                            Éjjel: <span class="min-temp" class="px-1"></span> -
+                            <span>°C</span>
+                        </div>
+                        <div class="temp">
+                            Nappal:
+                            <span class="max-temp" class="px-1"></span> -
+                            <span>°C</span>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </body>
+</html>
